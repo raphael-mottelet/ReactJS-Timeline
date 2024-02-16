@@ -56,10 +56,12 @@ transform: translateX(-50%); /* Center the items relative to the parent */
 
 
 .timeline-item-content {
-  background: #f0f0f0;
+  background: #cbf5ff;
   border-radius: 5px;
   padding: 10px;
   position: relative; /* Ensure proper positioning for dot */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .timeline-item-date {
