@@ -10,16 +10,22 @@ top: 0;
 left: 50%;
 width: 2px;
 height: 100%;
-background: #007bff;
+background: #99590f;
 transform: translateX(-50%);
 z-index: 1; /* Ensure the central line remains on top of other elements */
+}
+
+.timeline-item-content img {
+  width: 100px; /* Adjust the width of the image as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some margin to separate the image from the text */
 }
 
 .timeline-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: #99590f;
   position: absolute;
   top: 50%; /* Align dot vertically in the middle of the item */
 }
@@ -35,14 +41,17 @@ z-index: 1; /* Ensure the central line remains on top of other elements */
   align-items: flex-start;
   position: relative; /* Ensure proper positioning for child dot */
   left: 50%; /* Center the items horizontally */
-  transform: translateX(-50%); /* Center the items relative to the parent */
+  transform: translateX(10%); /* Center the items relative to the parent */
   
 }
 
 
 
 .timeline-item-content {
-  background: #cbf5ff;
+  background: #fc800ca1;
+  background: #fc800ca1;
+  width: 90%; /* Adjust the width as needed */
+  max-width: 600px;
   border-radius: 5px;
   padding: 10px;
   position: relative; /* Ensure proper positioning for dot */
@@ -53,7 +62,7 @@ z-index: 1; /* Ensure the central line remains on top of other elements */
 .timeline-item-date {
   font-size: 16px;
   font-weight: bold;
-  color: #007bff;
+  color: #000000;
 }
 
 .timeline-item-title {
@@ -75,16 +84,18 @@ z-index: 1; /* Ensure the central line remains on top of other elements */
 }*/
 .timeline-item.left {
   justify-content: flex-end; /* Push items towards the central line */
+  right: calc(85% + 15px); /* Position dot to the left side of the item */
 }
 
 .timeline-item.right {
   justify-content: flex-start; /* Push items towards the central line */
+  left: calc(19% + 10px); /* Position dot to the right side of the item */
 }
 
 .timeline-item.left .timeline-dot {
-  right: calc(45% + 15px); /* Position dot to the left side of the item */
+  right: calc(105% + 14px); /* Position dot to the left side of the item */
 }
 
 .timeline-item.right .timeline-dot {
-  left: calc(45% + 13px); /* Position dot to the right side of the item */
+  left: calc(106% + 15px); /* Position dot to the right side of the item */
 }

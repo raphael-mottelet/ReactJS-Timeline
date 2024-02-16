@@ -5,7 +5,7 @@
     top: 0;
     left: 50%;
     width: 2px;
-    background: #007bff;
+    background: #99590f;
     transition: height 0.5s ease; /* Add a transition for smooth height changes */
     z-index: 1; /* Ensure the central line remains on top of other elements */
   }

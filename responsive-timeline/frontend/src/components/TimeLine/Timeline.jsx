@@ -4,7 +4,6 @@ import './animation.css'; // Importer le fichier CSS d'animation
 import './Line-Animation.css'; // Importer le fichier CSS d'animation de ligne
 import './responsive.css'; // Importer le fichier CSS d'animation de ligne
 
-
 const Timeline = ({ events }) => {
   const [animatedItems, setAnimatedItems] = useState([]); // État pour suivre les éléments animés
   const itemRefs = useRef([]); // Références aux éléments de la timeline
@@ -13,7 +12,7 @@ const Timeline = ({ events }) => {
   // Effet pour animer les éléments séquentiellement
   useEffect(() => {
     const animateItems = () => {
-      const animationDelay = 900; // Délai d'animation en millisecondes
+      const animationDelay = 99999; // Délai d'animation en millisecondes
       events.forEach((event, index) => {
         setTimeout(() => {
           setAnimatedItems(prev => [...prev, index]);
@@ -51,8 +50,8 @@ const Timeline = ({ events }) => {
     // Observer l'intersection des éléments avec la fenêtre
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
-      rootMargin: '-250px', // Marge par rapport à la fenêtre pour déclencher l'intersection
-      threshold: 1, // Déclencher lorsque n'importe quelle partie de l'élément est visible
+      rootMargin: '-150px', // Marge par rapport à la fenêtre pour déclencher l'intersection
+      threshold: 0, // Déclencher lorsque n'importe quelle partie de l'élément est visible
     });
 
     // Observer chaque élément de la timeline
@@ -95,6 +94,7 @@ const Timeline = ({ events }) => {
             <div className="timeline-item-content">
               <span className="timeline-item-date">{event.date}</span> {/* Date de l'événement */}
               <h3 className="timeline-item-title">{event.title}</h3> {/* Titre de l'événement */}
+              <img src={event.image} alt={`Image for event ${index}`} /> {/* Image de l'événement */}
               <p className="timeline-item-description">{event.description}</p> {/* Description de l'événement */}
             </div>
           </div>
