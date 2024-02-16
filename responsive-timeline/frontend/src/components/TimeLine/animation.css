@@ -1,0 +1,18 @@
+/* animation.css */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Make the card invisible */
+  }
+  100% {
+    opacity: 1; /* Make the card visible */
+  }
+}
+
+.timeline-item {
+  opacity: 0; /* Initially set the opacity to 0 */
+}
+
+.timeline-item.animated {
+  animation: fadeIn 1s ease forwards;
+}

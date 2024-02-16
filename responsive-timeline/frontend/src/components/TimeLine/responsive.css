@@ -1,0 +1,66 @@
+@media screen and (max-width: 1850px) {
+  .timeline-item {
+    width: calc(33.33% - 10px);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .timeline-item {
+    width: calc(50% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 50%; /* Center the items horizontally */
+    transform: translateX(-50%); /* Center the items relative to the parent */
+    
+  }
+  .timeline-item.left .timeline-dot {
+    right: calc(45% + 15px); /* Position dot to the left side of the item */
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: calc(45% + 14px); /* Position dot to the right side of the item */
+  }
+  
+}
+
+@media screen and (max-width: 540px) {
+  .timeline-item {
+    width: calc(90% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 50%; /* Center the items horizontally */
+    transform: translateX(-50%); /* Center the items relative to the parent */
+    
+  }
+  .timeline-item.left .timeline-dot {
+    right: calc(45% + 15px); /* Position dot to the left side of the item */
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: calc(45% + 14px); /* Position dot to the right side of the item */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .timeline-item {
+    width: calc(50% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 50%; /* Center the items horizontally */
+    transform: translateX(-50%); /* Center the items relative to the parent */
+    
+  }
+  .timeline-item.left .timeline-dot {
+    right: calc(45% + 15px); /* Position dot to the left side of the item */
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: calc(45% + 14px); /* Position dot to the right side of the item */
+  }
+}
