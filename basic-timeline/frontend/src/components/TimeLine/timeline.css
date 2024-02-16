@@ -1,0 +1,46 @@
+/* Timeline.css */
+
+.timeline {
+    position: relative;
+    padding: 0 40px;
+    margin: 50px 0;
+  }
+  
+  .timeline-item {
+    padding-left: 40px;
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #007bff;
+  }
+  
+  .timeline-item-content {
+    padding: 20px;
+    border-radius: 5px;
+    background: #f0f0f0;
+  }
+  
+  .timeline-item-date {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .timeline-item-title {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+  
+  .timeline-item-description {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
