@@ -1,48 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './timeline.css';
-import './animationscroll.css'
+import './animation.css'; // Import the animation CSS file
 
 const Timeline = ({ events }) => {
-  useEffect(() => {
-    const timelineItems = document.querySelectorAll('.timeline-item');
+  const [animatedItems, setAnimatedItems] = useState([]);
 
-    const handleScroll = () => {
-      timelineItems.forEach(item => {
-        if (isElementInViewport(item)) {
-          item.classList.add('animated');
-        } else {
-          item.classList.remove('animated');
-        }
+  useEffect(() => {
+    // Function to animate items sequentially
+    const animateItems = () => {
+      const animationDelay = 900; // Adjust animation delay as needed
+      events.forEach((event, index) => {
+        setTimeout(() => {
+          setAnimatedItems(prev => [...prev, index]);
+        }, index * animationDelay);
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initially on component mount
+    animateItems();
 
+    // Cleanup function
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      setAnimatedItems([]);
     };
-  }, []);
-
-  const isElementInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
+  }, [events]);
 
   return (
     <div className="timeline">
       <div className="timeline-line"></div>
-
       <div className="timeline-items">
         {events.map((event, index) => (
-          <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+          <div
+            key={index}
+            className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${animatedItems.includes(index) ? 'animated' : ''}`}
+          >
             <div className="timeline-item-content">
-              <div className="timeline-dot"></div>
               <span className="timeline-item-date">{event.date}</span>
               <h3 className="timeline-item-title">{event.title}</h3>
               <p className="timeline-item-description">{event.description}</p>

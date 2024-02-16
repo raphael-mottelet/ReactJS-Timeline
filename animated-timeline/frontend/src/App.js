@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <h1 className='apptitle'>non-responsive simple timeline app</h1>
+      <h1 className='apptitle'>Animated timeline app</h1>
       <Timeline events={eventsData} />
     </div>
   );
