@@ -94,9 +94,9 @@ transform: translateX(-50%); /* Center the items relative to the parent */
 }
 
 .timeline-item.left .timeline-dot {
-  right: calc(100% + 10px); /* Position dot to the left side of the item */
+  right: calc(45% + 15px); /* Position dot to the left side of the item */
 }
 
 .timeline-item.right .timeline-dot {
-  left: calc(100% + 10px); /* Position dot to the right side of the item */
+  left: calc(45% + 13px); /* Position dot to the right side of the item */
 }
