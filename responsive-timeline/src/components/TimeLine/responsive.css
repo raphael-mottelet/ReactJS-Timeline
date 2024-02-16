@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+    .timeline {
+      width: 90%;
+    }
+  
+    .timeline-item {
+      width: calc(100% - 30px);
+    }
+  }
+  
