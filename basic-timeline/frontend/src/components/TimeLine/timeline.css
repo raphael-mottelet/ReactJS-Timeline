@@ -1,4 +1,4 @@
-/* Timeline.css */
+/* testcss.css */
 
 .timeline {
   position: relative;
@@ -7,13 +7,35 @@
 }
 
 .timeline-line {
+position: absolute;
+top: 0;
+left: 50%;
+width: 2px;
+height: 100%;
+background: #007bff;
+transform: translateX(-50%);
+z-index: 1; /* Ensure the central line remains on top of other elements */
+}
+
+
+.timeline-item {
+width: calc(50% - 5px); /* Adjust width to leave space for the central line and some spacing */
+margin-top: 20px; /* Add some top margin to create space between events and the main line */
+display: flex;
+align-items: flex-start;
+position: relative; /* Ensure proper positioning for child dot */
+left: 50%; /* Center the items horizontally */
+transform: translateX(-50%); /* Center the items relative to the parent */
+}
+
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: #007bff;
-  transform: translateX(-50%);
+  top: 50%; /* Align dot vertically in the middle of the item */
 }
 
 .timeline-items {
@@ -21,16 +43,23 @@
 }
 
 .timeline-item {
-  width: calc(50% - 20px); /* Adjust width to leave space for the central line and some spacing */
-  margin-top: 20px; /* Add some top margin to create space between events */
+  width: calc(25% + 0px); /* Adjust width to leave space for the central line and some spacing */
+  margin-top: 20px; /* Add some top margin to create space between events and the main line */
   display: flex;
   align-items: flex-start;
+  position: relative; /* Ensure proper positioning for child dot */
+  left: 50%; /* Center the items horizontally */
+  transform: translateX(-50%); /* Center the items relative to the parent */
+  
 }
+
+
 
 .timeline-item-content {
   background: #f0f0f0;
   border-radius: 5px;
   padding: 10px;
+  position: relative; /* Ensure proper positioning for dot */
 }
 
 .timeline-item-date {
@@ -49,10 +78,25 @@
   font-size: 16px;
 }
 
+/* .timeline-item.left .timeline-dot {
+  right: calc(100% + 10px);
+} */
+
+/*.timeline-item.right .timeline-dot {
+  left: calc(100% + 10px);
+}*/
 .timeline-item.left {
   justify-content: flex-end; /* Push items towards the central line */
 }
 
 .timeline-item.right {
-  margin-left: auto; /* Push items to the left side of the container */
+  justify-content: flex-start; /* Push items towards the central line */
+}
+
+.timeline-item.left .timeline-dot {
+  right: calc(100% + 10px); /* Position dot to the left side of the item */
+}
+
+.timeline-item.right .timeline-dot {
+  left: calc(100% + 10px); /* Position dot to the right side of the item */
 }
