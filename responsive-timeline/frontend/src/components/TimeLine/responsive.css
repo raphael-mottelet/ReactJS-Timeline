@@ -4,7 +4,70 @@
   }
 }
 
+
+@media screen and (max-width: 1700px) {
+  .timeline-item {
+    width: calc(40% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 68.4%; /* Center the items horizontally */
+    transform: translateX(-36.3%); /* Center the items relative to the parent */
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .timeline-item {
+    width: calc(39% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 68.6%; /* Center the items horizontally */
+    transform: translateX(-36.6%); /* Center the items relative to the parent */
+  }
+}
+
 @media screen and (max-width: 950px) {
+  .timeline-item {
+    width: calc(50% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 40px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 17.5%; /* Center the items horizontally */
+    transform: translateX(10%); /* Center the items relative to the parent */
+    
+  }
+  .timeline-item.left .timeline-dot {
+    right: calc(45% + 15px); /* Position dot to the left side of the item */
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: calc(45% + 14px); /* Position dot to the right side of the item */
+  }
+  .timeline-dot {
+    background-color: #99590f00;
+  }
+  .timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #99590f;
+    transform: translateX(-50%);
+    z-index: 0; /* Ensure the central line remains on top of other elements */
+  }
+  .timeline-item-content {
+    background: #ffab5d;
+  }
+  
+}
+
+
+@media screen and (max-width: 750px) {
   .timeline-item {
     width: calc(50% + 15px); /* Adjust width to leave space for the central line and some spacing */
     margin-top: 20px; /* Add some top margin to create space between events and the main line */
@@ -21,8 +84,7 @@
   
   .timeline-item.right .timeline-dot {
     left: calc(45% + 14px); /* Position dot to the right side of the item */
-  }
-  
+  } 
 }
 
 @media screen and (max-width: 540px) {
@@ -33,27 +95,21 @@
     align-items: flex-start;
     position: relative; /* Ensure proper positioning for child dot */
     left: 50%; /* Center the items horizontally */
-    transform: translateX(-50%); /* Center the items relative to the parent */
+    transform: translateX(-20%); /* Center the items relative to the parent */
     
-  }
-  .timeline-item.left .timeline-dot {
-    right: calc(45% + 15px); /* Position dot to the left side of the item */
-  }
-  
-  .timeline-item.right .timeline-dot {
-    left: calc(45% + 14px); /* Position dot to the right side of the item */
   }
 }
 
 @media screen and (max-width: 400px) {
   .timeline-item {
-    width: calc(50% + 15px); /* Adjust width to leave space for the central line and some spacing */
-    margin-top: 20px; /* Add some top margin to create space between events and the main line */
+    width: calc(60% + 15px); /* Adjust width to leave space for the central line and some spacing */
+    height: 0px; /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 250px; /* Add some top margin to create space between events and the main line */
     display: flex;
     align-items: flex-start;
     position: relative; /* Ensure proper positioning for child dot */
-    left: 50%; /* Center the items horizontally */
-    transform: translateX(-50%); /* Center the items relative to the parent */
+    left: 23%; /* Center the items horizontally */
+    transform: translateX(-11%); /* Center the items relative to the parent */
     
   }
   .timeline-item.left .timeline-dot {
@@ -62,5 +118,67 @@
   
   .timeline-item.right .timeline-dot {
     left: calc(45% + 14px); /* Position dot to the right side of the item */
+  }
+  .timeline-line {
+    background: #99590f00;
+  }
+  .timeline-dot {
+  background-color: #99590f00;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 1; /* Make the card invisible */
+    }
+    100% {
+      opacity: 1; /* Make the card visible */
+    }
+  }
+  .timeline-item {
+    opacity: 1; /* Initially set the opacity to 0 */
+  }
+  .timeline-item.animated {
+    animation: fadeIn 1s ease forwards;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .timeline-item {
+    width: calc(70% + 20px); /* Adjust width to leave space for the central line and some spacing */
+    height: 0px; /* Adjust width to leave space for the central line and some spacing */
+    margin-top: 250px; /* Add some top margin to create space between events and the main line */
+    display: flex;
+    align-items: flex-start;
+    position: relative; /* Ensure proper positioning for child dot */
+    left: 23%; /* Center the items horizontally */
+    transform: translateX(-11%); /* Center the items relative to the parent */
+    
+  }
+
+  .timeline-item-content {
+    background: #fc800ca1;
+    background: #fc800ca1;
+    width: 90%; /* Adjust the width as needed */
+    max-width: 400px;
+    border-radius: 8px;
+    padding: 10px;
+    position: relative; /* Ensure proper positioning for dot */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 1; /* Make the card invisible */
+    }
+    100% {
+      opacity: 1; /* Make the card visible */
+    }
+  }
+  .timeline-item {
+    opacity: 1; /* Initially set the opacity to 0 */
+  }
+  .timeline-item.animated {
+    animation: fadeIn 1s ease forwards;
   }
 }

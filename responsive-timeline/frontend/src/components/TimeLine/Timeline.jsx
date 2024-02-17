@@ -50,7 +50,7 @@ const Timeline = ({ events }) => {
     // Observer l'intersection des éléments avec la fenêtre
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
-      rootMargin: '-150px', // Marge par rapport à la fenêtre pour déclencher l'intersection
+      rootMargin: '-350px', // Marge par rapport à la fenêtre pour déclencher l'intersection
       threshold: 0, // Déclencher lorsque n'importe quelle partie de l'élément est visible
     });
 
@@ -80,6 +80,7 @@ const Timeline = ({ events }) => {
   }, [animatedItems]);
 
   return (
+    
     <div className="timeline">
       <div className="timeline-line" ref={lineRef}></div> {/* Ligne de la timeline */}
       <div className="timeline-items">
